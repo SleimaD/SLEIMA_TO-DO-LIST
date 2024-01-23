@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="./public/css/style.css">
+</head>
+<body>
+    
+
+        <div class="container">
+                <div class="title">
+                    <h1>TO DO LIST</h1>
+
+                </div>
+                <form id="form">
+                    <input 
+                        type="text" 
+                        name="" 
+                        id="newtask" 
+                        placeholder="Ajoutez une tâche" />
+                    <input 
+                        type="submit"
+                        id="ajouter" 
+                        value="Ajouter" />
+                </form>
+            
+            
+                <div class="choice">
+                    <h2>Trier par :</h2>
+
+                    <button class="shadow__btn" id="tous">
+                        TOUS
+                    </button>
+                    
+                    <button class="shadow__btn" id="enCours">
+                       EN COURS
+                    </button>
+                    
+                    <button class="shadow__btn" id="finies">
+                      FINIES
+                    </button>
+
+                </div>
+                <section class="task-list">
+        
+                    <div id="tasks">
+        
+                    </div>
+
+                    <div id="tasksFinished">
+                       
+                    </div>
+
+                </section>
+            
+        
+    
+        </div>
+       
+
+    <script src="./public/js/main.js"></script>
+</body>
+</html>
