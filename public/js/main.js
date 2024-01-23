@@ -1,7 +1,8 @@
 //todolist
 
-
 document.addEventListener('DOMContentLoaded', () => {
+
+    //? Get elements from the DOM
     let input = document.querySelector("#newtask");
     let form = document.querySelector("#form");
     let list = document.querySelector("#tasks");
@@ -11,6 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentFilter = "tous";
     let taskInput;
 
+
+    //? Add click event listeners to the filter buttons
     tous.addEventListener('click', () => {
         applyFilter("tous");
     });
@@ -23,11 +26,15 @@ document.addEventListener('DOMContentLoaded', () => {
         applyFilter("finies");
     });
 
+
+    //? Apply the selected filter
     function applyFilter(filter) {
         currentFilter = filter;
         refresh();
     }
 
+
+    //? Refresh the list of tasks based on the current filter
     function refresh() {
         let tasks = document.querySelectorAll(".task");
         tasks.forEach(task => {
@@ -50,10 +57,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+
+        //? Handle click events on the task list
     list.addEventListener('click', (event) => {
         let targetButton = event.target;
         let task = targetButton.closest(".task");
 
+
+        //? validate a task
         if (targetButton.classList.contains('valid')) {
             task.classList.toggle('finished');
             if (task.classList.contains('finished')) {
@@ -65,6 +76,8 @@ document.addEventListener('DOMContentLoaded', () => {
             refresh();
         }
 
+
+        //? edit a taask
         if (targetButton.classList.contains('edit')) {
             taskInput = task.querySelector('.text');
             taskInput.removeAttribute('readonly');
@@ -72,6 +85,8 @@ document.addEventListener('DOMContentLoaded', () => {
             
         }
 
+
+        //? save changes made to a task
         if (targetButton.classList.contains('save')) {
             taskInput.setAttribute("readonly", "readonly");
             targetButton.innerText = 'MODIFIER';
@@ -80,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
             refresh();
         }
 
-
+        //? delete a task
         if (targetButton.classList.contains('delete')) {
             let confirmDelete = confirm("Voulez-vous vraiment supprimer cette tâche?");
             if (confirmDelete) {
@@ -94,16 +109,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     });
 
+
+    //? form submission
     form.addEventListener('submit', (event) => {
         let task = input.value.trim();
 
-      
+        //? check if task name is empty
         if (task === "") {
             alert("Veuillez entrer une tâche !");
-            event.preventDefault(); // Empêchez la soumission du formulaire
+            event.preventDefault();
             return;
         }
 
+
+        //? Create new task element
         let tache = document.createElement('div');
         tache.classList.add('task');
 
@@ -152,6 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
         input.value = '';
 
     
+        //? click events on the edit button
         edit.addEventListener('click', (e) => {
             if (edit.innerText.toLowerCase() == "edit") {
                 edit.innerText = "MODIFIER";
@@ -165,13 +185,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
 
-
+        //? click events on the delete button
         deleter.addEventListener('click', (e) => {
             list.removeChild(tache)
             refresh();
             
         });
 
+
+        //? click events on the valid button
         valid.addEventListener('click', () => {
             taskInput.setAttribute("readonly", "readonly");
             refresh();
@@ -180,7 +202,5 @@ document.addEventListener('DOMContentLoaded', () => {
         event.preventDefault();
     });
 });
-
-
 
 
