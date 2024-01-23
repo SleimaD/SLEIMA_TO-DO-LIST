@@ -7,7 +7,7 @@ body{
     width: 100vw;
     height: 100vh;
     overflow-x: hidden;
-    background-color: #959191;
+    background-color: #777575;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -98,7 +98,7 @@ input, button {
     white-space: nowrap;
     cursor: pointer;
     transition: all .3s;
-    
+    font-family: 'chakra petch';
    }
    
 #ajouter:active,
@@ -135,6 +135,7 @@ h2 {
 
 /*filter buttons styling*/
 .shadow__btn {
+    font-family: 'chakra petch';
     padding: 1px 15px;
     border: none;
     height: 40px;
@@ -148,12 +149,10 @@ h2 {
     text-transform: uppercase;
     transition: 0.5s;
     transition-property: box-shadow;
-}
-
-.shadow__btn {
     background: rgb(19, 97, 181);
     box-shadow: 0 0 25px rgb(21, 93, 152);
 }
+
 
 .shadow__btn:hover {
     box-shadow: 0 0 5px rgb(15, 93, 156),
@@ -220,7 +219,6 @@ h2 {
 }
 
 .task .actions button:hover {
-	/* opacity: 0.8; */
     color: rgb(211, 201, 126);
 }
 
@@ -232,6 +230,7 @@ h2 {
 	background-image: linear-gradient(to right, #1c0a52, rgb(38, 0, 255));
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
+    font-family: 'chakra petch';
 }
 
 
@@ -239,7 +238,7 @@ h2 {
     background-image: linear-gradient(to right, #fc0808, rgb(255, 24, 24));
     -webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-
+    font-family: 'chakra petch';
 }
 
 
@@ -247,7 +246,7 @@ h2 {
     background-image: linear-gradient(to right, #07630a, rgb(77, 190, 12));
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-
+    font-family: 'chakra petch';
 }
 
 
@@ -265,22 +264,22 @@ h2 {
 /* custom scrollbar */
 ::-webkit-scrollbar {
     width: 20px;
-  }
+}
   
-  ::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
     background-color: transparent;
     cursor: pointer;
-  }
+}
   
-  ::-webkit-scrollbar-thumb {
-    background-color: #460c79;
+::-webkit-scrollbar-thumb {
+    background-color: #2210e4;
     border-radius: 20px;
     border: 6px solid transparent;
     background-clip: content-box;
     cursor: pointer;
-  }
+}
   
-  ::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover {
     background-color: #b8551b;
     cursor: pointer;
-  }
+}

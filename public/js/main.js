@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (targetButton.classList.contains('delete')) {
             let confirmDelete = confirm("Voulez-vous vraiment supprimer cette tâche?");
             if (confirmDelete) {
-                list.removeChild(tache);
+                list.removeChild(task);
             } else {
                 return
             }
@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         //? click events on the delete button
         deleter.addEventListener('click', (e) => {
-            list.removeChild(tache)
+            list.removeChild(task)
             refresh();
             
         });
@@ -198,6 +198,34 @@ document.addEventListener('DOMContentLoaded', () => {
             taskInput.setAttribute("readonly", "readonly");
             refresh();
         });
+
+
+        //? Add click event listeners to the filter buttons
+        tous.addEventListener('click', () => {
+            applyFilter("tous");
+            highlightButton(tous);
+        });
+
+        enCours.addEventListener('click', () => {
+            applyFilter("enCours");
+            highlightButton(enCours);
+        });
+
+        fini.addEventListener('click', () => {
+            applyFilter("finies");
+            highlightButton(fini);
+        });
+
+        //? Function to highlight the clicked button
+        function highlightButton(button) {
+            //? Reset the background color of the other buttons
+            tous.style.backgroundColor = '';
+            enCours.style.backgroundColor = '';
+            fini.style.backgroundColor = '';
+
+            //? Change the background color of the clicked button
+            button.style.backgroundColor = '#0e0d20';
+        }
 
         event.preventDefault();
     });
